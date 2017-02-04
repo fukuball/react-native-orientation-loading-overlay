@@ -1,5 +1,9 @@
 # React Native Orientation Loading Overlay
 
+[![NPM version][npm-image]][npm-url]
+[![NPM downloads][npm-downloads]][npm-url]
+[![MIT License][license-image]][license-url]
+
 > **tldr;** Orientation supported loading overlay for [React Native][react-native].
 
 Default View
@@ -175,6 +179,11 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
+[npm-image]: http://img.shields.io/npm/v/react-native-orientation-loading-overlay.svg?style=flat
+[npm-url]: https://npmjs.org/package/react-native-orientation-loading-overlay
+[npm-downloads]: http://img.shields.io/npm/dm/react-native-orientation-loading-overlay.svg?style=flat
+[license-image]: http://img.shields.io/badge/license-MIT-blue.svg?style=flat
+[license-url]: LICENSE
 [react-native]: https://facebook.github.io/react-native
 [original-demo]: https://cdn.rawgit.com/fukuball/react-native-orientation-loading-overlay/master/screenshot/original-iphone.gif
 [custom-demo]: https://cdn.rawgit.com/fukuball/react-native-orientation-loading-overlay/master/screenshot/custom-iphone.gif
