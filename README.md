@@ -4,7 +4,11 @@
 
 [react-native]: https://facebook.github.io/react-native
 
-# License
+## Contributors
+
+Fukuball <fukuball@gmail.com>
+
+## License
 
 The MIT License (MIT)
 
