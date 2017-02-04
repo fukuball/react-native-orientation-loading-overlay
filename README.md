@@ -2,7 +2,13 @@
 
 > **tldr;** Orientation supported loading overlay for [React Native][react-native].
 
-[react-native]: https://facebook.github.io/react-native
+Default View
+
+![Original Demo][original-demo]
+
+Custom View
+
+![Custom Demo][custom-demo]
 
 ## Install
 
@@ -37,3 +43,7 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
+
+[react-native]: https://facebook.github.io/react-native
+[original-demo]: https://cdn.rawgit.com/fukuball/react-native-orientation-loading-overlay/master/screenshot/original-iphone.gif
+[custom-demo]: https://cdn.rawgit.com/fukuball/react-native-orientation-loading-overlay/master/screenshot/custom-iphone.gif
