@@ -25,36 +25,78 @@ var styles = StyleSheet.create({
   message: {
     color: '#fff',
     fontSize: 24,
-    fontWeight: '900'
+    fontWeight: '400'
   }
 });
 
+const SIZES = ['small', 'normal', 'large']
+
 export default class OrientationLoadingOverlay extends Component {
+
   constructor(props) {
     super(props);
   }
+
+  static propTypes = {
+    visible: React.PropTypes.bool,
+    color: React.PropTypes.string,
+    indicatorSize: React.PropTypes.oneOf(SIZES),
+    messageFontSize: React.PropTypes.number,
+    message: React.PropTypes.string
+  };
+
+  static defaultProps = {
+    visible: false,
+    color: 'white',
+    indicatorSize: 'large',
+    messageFontSize: 24,
+    message: ""
+  };
+
   render() {
-    return (
-      <Modal
-        animationType={"fade"}
-        transparent={true}
-        visible={this.props.visible}
-        supportedOrientations={['portrait', 'landscape']}
-        onOrientationChange={evt => this.setState({currentOrientation: evt.nativeEvent.orientation})}
-        >
-        <View style={[styles.container]}>
-          <View style={[styles.innerContainer]}>
-            <ActivityIndicator
-              style={[styles.indicator]}
-              size="large"
-              color="#fff"
-              />
-            <Text style={[styles.message]}>
-              {this.props.message}
-            </Text>
+    const messageStyle = {
+      color: this.props.color,
+      fontSize: this.props.messageFontSize
+    };
+    if (typeof this.props.children != 'undefined') {
+      return (
+        <Modal
+          animationType={"fade"}
+          transparent={true}
+          visible={this.props.visible}
+          supportedOrientations={['portrait', 'landscape']}
+          onOrientationChange={evt => this.setState({currentOrientation: evt.nativeEvent.orientation})}
+          >
+          <View style={[styles.container]}>
+            <View style={[styles.innerContainer]}>
+              {this.props.children}
+            </View>
           </View>
-        </View>
-      </Modal>
-    );
+        </Modal>
+      );
+    } else {
+      return (
+        <Modal
+          animationType={"fade"}
+          transparent={true}
+          visible={this.props.visible}
+          supportedOrientations={['portrait', 'landscape']}
+          onOrientationChange={evt => this.setState({currentOrientation: evt.nativeEvent.orientation})}
+          >
+          <View style={[styles.container]}>
+            <View style={[styles.innerContainer]}>
+              <ActivityIndicator
+                style={[styles.indicator]}
+                size={this.props.indicatorSize}
+                color={this.props.color}
+                />
+              <Text style={[styles.message, messageStyle]}>
+                {this.props.message}
+              </Text>
+            </View>
+          </View>
+        </Modal>
+      );
+    }
   }
 }

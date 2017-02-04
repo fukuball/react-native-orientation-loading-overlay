@@ -11,6 +11,7 @@ import {
   Text,
   View
 } from 'react-native';
+import OrientationLoadingOverlay from 'react-native-orientation-loading-overlay';
 
 export default class example extends Component {
   render() {
@@ -26,6 +27,13 @@ export default class example extends Component {
           Press Cmd+R to reload,{'\n'}
           Cmd+D or shake for dev menu
         </Text>
+        <OrientationLoadingOverlay
+            visible={this.state.overlay_visible}
+            color="white"
+            indicatorSize="large"
+            messageFontSize={24}
+            message={I18n.t("logining", {locale: I18n.current_app_locale})}
+            />
       </View>
     );
   }

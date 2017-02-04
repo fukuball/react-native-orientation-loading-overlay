@@ -4,6 +4,12 @@
 
 [react-native]: https://facebook.github.io/react-native
 
+## Install
+
+```bash
+npm install --save react-native-orientation-loading-overlay@latest
+```
+
 ## Contributors
 
 Fukuball <fukuball@gmail.com>
