@@ -77,6 +77,7 @@ export default class OrientationLoadingOverlay extends Component {
     } else {
       return (
         <Modal
+          onRequestClose={() => this.close()}
           animationType={"fade"}
           transparent={true}
           visible={this.props.visible}
