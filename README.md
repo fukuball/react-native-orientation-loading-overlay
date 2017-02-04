@@ -1,0 +1,1 @@
+# React Native Orientation Loading Overlay
