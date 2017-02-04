@@ -16,6 +16,137 @@ Custom View
 npm install --save react-native-orientation-loading-overlay@latest
 ```
 
+## Usage
+
+* visible: true or false
+* color: color string
+* indicatorSize: large, normal, or small
+* messageFontSize: number
+* message: string content
+
+For example ([Runnable Example][runnable-example-1]):
+
+```js
+import React, { Component } from 'react';
+import {
+  AppRegistry,
+  StyleSheet,
+  Text,
+  View
+} from 'react-native';
+import OrientationLoadingOverlay from 'react-native-orientation-loading-overlay';
+
+export default class original extends Component {
+  render() {
+    return (
+      <View style={styles.container}>
+        <Text style={styles.welcome}>
+          Welcome to React Native!
+        </Text>
+        <Text style={styles.instructions}>
+          To get started, edit index.ios.js
+        </Text>
+        <Text style={styles.instructions}>
+          Press Cmd+R to reload,{'\n'}
+          Cmd+D or shake for dev menu
+        </Text>
+        <OrientationLoadingOverlay
+          visible={true}
+          color="white"
+          indicatorSize="large"
+          messageFontSize={24}
+          message="Loading... 😀😀😀"
+          />
+      </View>
+    );
+  }
+}
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: '#F5FCFF',
+  },
+  welcome: {
+    fontSize: 20,
+    textAlign: 'center',
+    margin: 10,
+  },
+  instructions: {
+    textAlign: 'center',
+    color: '#333333',
+    marginBottom: 5,
+  },
+});
+
+AppRegistry.registerComponent('original', () => original);
+```
+
+Or use your custom indicator ([Runnable Example][runnable-example-2]):
+
+```js
+import React, { Component } from 'react';
+import {
+  AppRegistry,
+  StyleSheet,
+  Text,
+  View,
+  Image
+} from 'react-native';
+import OrientationLoadingOverlay from 'react-native-orientation-loading-overlay';
+
+export default class custom extends Component {
+  render() {
+    return (
+      <View style={styles.container}>
+        <Text style={styles.welcome}>
+          Welcome to React Native!
+        </Text>
+        <Text style={styles.instructions}>
+          To get started, edit index.ios.js
+        </Text>
+        <Text style={styles.instructions}>
+          Press Cmd+R to reload,{'\n'}
+          Cmd+D or shake for dev menu
+        </Text>
+        <OrientationLoadingOverlay
+          visible={true}
+          >
+          <View>
+            <Image
+              source={require('./assets/img/loading-cat.gif')}
+              />
+          </View>
+        </OrientationLoadingOverlay>
+      </View>
+    );
+  }
+}
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: '#F5FCFF',
+  },
+  welcome: {
+    fontSize: 20,
+    textAlign: 'center',
+    margin: 10,
+  },
+  instructions: {
+    textAlign: 'center',
+    color: '#333333',
+    marginBottom: 5,
+  },
+});
+
+AppRegistry.registerComponent('custom', () => custom);
+```
+
 ## Contributors
 
 Fukuball <fukuball@gmail.com>
@@ -47,3 +178,5 @@ SOFTWARE.
 [react-native]: https://facebook.github.io/react-native
 [original-demo]: https://cdn.rawgit.com/fukuball/react-native-orientation-loading-overlay/master/screenshot/original-iphone.gif
 [custom-demo]: https://cdn.rawgit.com/fukuball/react-native-orientation-loading-overlay/master/screenshot/custom-iphone.gif
+[runnable-example-1]: https://github.com/fukuball/react-native-orientation-loading-overlay/tree/master/example/original
+[runnable-example-2]: https://github.com/fukuball/react-native-orientation-loading-overlay/tree/master/example/custom
