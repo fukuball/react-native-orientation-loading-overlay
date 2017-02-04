@@ -7,7 +7,7 @@ import {
     StyleSheet
 } from 'react-native';
 
-var styles = StyleSheet.create({
+const styles = StyleSheet.create({
   container: {
     flex: 1,
     justifyContent: 'center',
@@ -29,7 +29,7 @@ var styles = StyleSheet.create({
   }
 });
 
-const SIZES = ['small', 'normal', 'large']
+const SIZES = ['small', 'normal', 'large'];
 
 export default class OrientationLoadingOverlay extends Component {
 
@@ -50,7 +50,7 @@ export default class OrientationLoadingOverlay extends Component {
     color: 'white',
     indicatorSize: 'large',
     messageFontSize: 24,
-    message: ""
+    message: ''
   };
 
   render() {
@@ -58,14 +58,16 @@ export default class OrientationLoadingOverlay extends Component {
       color: this.props.color,
       fontSize: this.props.messageFontSize
     };
-    if (typeof this.props.children != 'undefined') {
+    if (typeof this.props.children !== 'undefined') {
       return (
         <Modal
-          animationType={"fade"}
+          animationType={'fade'}
           transparent={true}
           visible={this.props.visible}
           supportedOrientations={['portrait', 'landscape']}
-          onOrientationChange={evt => this.setState({currentOrientation: evt.nativeEvent.orientation})}
+          onOrientationChange={
+            evt => this.setState({currentOrientation: evt.nativeEvent.orientation})
+          }
           >
           <View style={[styles.container]}>
             <View style={[styles.innerContainer]}>
@@ -78,11 +80,13 @@ export default class OrientationLoadingOverlay extends Component {
       return (
         <Modal
           onRequestClose={() => this.close()}
-          animationType={"fade"}
+          animationType={'fade'}
           transparent={true}
           visible={this.props.visible}
           supportedOrientations={['portrait', 'landscape']}
-          onOrientationChange={evt => this.setState({currentOrientation: evt.nativeEvent.orientation})}
+          onOrientationChange={
+            evt => this.setState({currentOrientation: evt.nativeEvent.orientation})
+          }
           >
           <View style={[styles.container]}>
             <View style={[styles.innerContainer]}>
