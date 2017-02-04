@@ -1,0 +1,44 @@
+{
+  "name": "react-native-orientation-loading-overlay",
+  "description": "Orientation supported loading overlay for React Native",
+  "version": "0.1.0",
+  "author": "Fukuball <fukuball@gmail.com>",
+  "bugs": {
+    "url": "https://github.com/fukuball/react-native-orientation-loading-overlay/issues"
+  },
+  "devDependencies": {
+    "babel-eslint": "^6.1.2",
+    "babel-preset-react-native": "^1.9.0",
+    "eslint": "^3.2.0",
+    "eslint-config-crocodile": "^1.0.0",
+    "eslint-plugin-react": "^5.2.2",
+    "eslint-plugin-react-native": "^1.2.0"
+  },
+  "homepage": "https://github.com/fukuball/react-native-orientation-loading-overlay",
+  "keywords": [
+    "activity",
+    "component",
+    "indicator",
+    "loading",
+    "modal",
+    "orientation",
+    "overlay",
+    "pop-up",
+    "popup",
+    "react",
+    "react-native",
+    "screen",
+    "spinner",
+    "view"
+  ],
+  "license": "MIT",
+  "main": "src/index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fukuball/react-native-orientation-loading-overlay"
+  },
+  "scripts": {
+    "lint": "node_modules/.bin/eslint src",
+    "test": "npm run lint"
+  }
+}
