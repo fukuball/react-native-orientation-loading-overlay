@@ -1,7 +1,7 @@
 {
   "name": "react-native-orientation-loading-overlay",
   "description": "Orientation supported loading overlay for React Native",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "author": "Fukuball <fukuball@gmail.com>",
   "bugs": {
     "url": "https://github.com/fukuball/react-native-orientation-loading-overlay/issues"
