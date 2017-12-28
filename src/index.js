@@ -37,14 +37,6 @@ export default class OrientationLoadingOverlay extends Component {
     super(props);
   }
 
-  static propTypes = {
-    visible: React.PropTypes.bool,
-    color: React.PropTypes.string,
-    indicatorSize: React.PropTypes.oneOf(SIZES),
-    messageFontSize: React.PropTypes.number,
-    message: React.PropTypes.string
-  };
-
   static defaultProps = {
     visible: false,
     color: 'white',
