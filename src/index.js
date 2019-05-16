@@ -53,6 +53,7 @@ export default class OrientationLoadingOverlay extends Component {
     if (typeof this.props.children !== 'undefined') {
       return (
         <Modal
+          onRequestClose={() => {}}
           animationType={'fade'}
           transparent={true}
           visible={this.props.visible}
@@ -71,6 +72,7 @@ export default class OrientationLoadingOverlay extends Component {
     } else {
       return (
         <Modal
+          onRequestClose={() => {}}
           animationType={'fade'}
           transparent={true}
           visible={this.props.visible}
