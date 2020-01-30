@@ -4,15 +4,16 @@ import {
     ActivityIndicator,
     View,
     Text,
-    StyleSheet
+    StyleSheet,
+    Platform,
+    StatusBar
 } from 'react-native';
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
     justifyContent: 'center',
-    padding: 20,
-    backgroundColor: 'rgba(0, 0, 0, 0.5)'
+    padding: 20
   },
   innerContainer: {
     borderRadius: 10,
@@ -42,7 +43,11 @@ export default class OrientationLoadingOverlay extends Component {
     color: 'white',
     indicatorSize: 'large',
     messageFontSize: 24,
-    message: ''
+    message: '',
+    container: null,
+    innerContainer: null,
+    bgColor: "rgba(0,0,0,0.5)",
+    statusBarOverlay: false
   };
 
   render() {
@@ -61,9 +66,14 @@ export default class OrientationLoadingOverlay extends Component {
           onOrientationChange={
             evt => this.setState({currentOrientation: evt.nativeEvent.orientation})
           }
-          >
-          <View style={[styles.container]}>
-            <View style={[styles.innerContainer]}>
+          maxHeight={10}
+        >
+          {Platform.OS === 'android' && this.props.statusBarOverlay?
+            <StatusBar backgroundColor={this.props.bgColor}/>
+            : null
+          }
+          <View style={[styles.container, {backgroundColor: this.props.bgColor}, this.props.container? this.props.container : {}]}>
+            <View style={[styles.innerContainer, this.props.innerContainer? this.props.innerContainer : {}]}>
               {this.props.children}
             </View>
           </View>
@@ -80,15 +90,19 @@ export default class OrientationLoadingOverlay extends Component {
           onOrientationChange={
             evt => this.setState({currentOrientation: evt.nativeEvent.orientation})
           }
-          >
-          <View style={[styles.container]}>
-            <View style={[styles.innerContainer]}>
+        >
+          <View style={[styles.container, this.props.container? this.props.container : {}]}>
+            {Platform.OS === 'android' && this.props.statusBarOverlay?
+              <StatusBar backgroundColor={this.props.bgColor}/>
+              : null
+            }
+            <View style={[styles.innerContainer, {backgroundColor: this.props.bgColor}, this.props.innerContainer? this.props.innerContainer : {}]}>
               <ActivityIndicator
                 style={[styles.indicator]}
                 size={this.props.indicatorSize}
                 color={this.props.color}
                 />
-              <Text style={[styles.message, messageStyle]}>
+              <Text style={[styles.message, messageStyle, this.props.textStyle? this.props.textStyle : {}]}>
                 {this.props.message}
               </Text>
             </View>
